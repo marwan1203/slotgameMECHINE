@@ -3,6 +3,7 @@ package com.example.slotgame;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,13 +16,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+public static int Pubcounttrue=0,gamePlayed=0;
     private TextView n1, n2, n3, n4, n5, n6, random, numbers;
     private int counttrue=0;
-    private Button start, newgame;
+    private Button start, newgame,scorePage;
     private boolean isRunning;
     private Random rand = new Random();
     private int count=0;
+    Intent score=new Intent(MainActivity.this,ScoreActivity.class);
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         random = findViewById(R.id.randNum);
         newgame = findViewById(R.id.newgame);
         start = findViewById(R.id.startstop);
+        scorePage=findViewById(R.id.ScorePage);
         n1.setText(String.valueOf(rand.nextInt(40) + 1));
         n2.setText(String.valueOf(rand.nextInt(40) + 1));
         n3.setText(String.valueOf(rand.nextInt(40) + 1));
@@ -49,10 +52,17 @@ public class MainActivity extends AppCompatActivity {
         numbers.setText("");
         start.setText("start");
         isRunning = false;
+        scorePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(score);
+                                         }
+                                     });
         newgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(count>5){
+                    gamePlayed++;
                     n1.setText(String.valueOf(rand.nextInt(40) + 1));
                     n2.setText(String.valueOf(rand.nextInt(40) + 1));
                     n3.setText(String.valueOf(rand.nextInt(40) + 1));
@@ -112,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     String drawn = random.getText().toString();
 
                     if (n1.getText().toString().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n1.setBackgroundColor(0xffff0000);
@@ -119,30 +130,35 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if (n2.getText().toString().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n2.setBackgroundColor(0xffff0000);
                     }
 
                     if (n3.getText().toString  ().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n3.setBackgroundColor(0xffff0000);
                     }
 
                     if (n4.getText().toString().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n4.setBackgroundColor(0xffff0000);
                     }
 
                     if (n5.getText().toString().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n5.setBackgroundColor(0xffff0000);
                     }
 
                     if (n6.getText().toString().equals(drawn)){
+                        Pubcounttrue++;
                         counttrue++;
                         numbers.setText(counttrue+" out of 6");
                         n6.setBackgroundColor(0xffff0000);
