@@ -17,6 +17,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private TextView n1, n2, n3, n4, n5, n6, random, numbers;
+    private int counttrue=0;
     private Button start, newgame;
     private boolean isRunning;
     private Random rand = new Random();
@@ -72,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                     isRunning = true;
                     start.setText("stop");
                     start.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
-
 
                     new Thread(new Runnable() {
                         @Override
@@ -98,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                                 });
 
                                 try {
-                                    Thread.sleep(100); // change number every 100ms
+                                    Thread.sleep(100);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
@@ -110,38 +109,42 @@ public class MainActivity extends AppCompatActivity {
                     isRunning = false;
                     start.setText("start");
                     start.setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
-
-
                     String drawn = random.getText().toString();
 
                     if (n1.getText().toString().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n1.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n1.setBackgroundColor(0xffff0000);
 
                     }
 
                     if (n2.getText().toString().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n2.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n2.setBackgroundColor(0xffff0000);
                     }
 
                     if (n3.getText().toString  ().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n3.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n3.setBackgroundColor(0xffff0000);
                     }
 
                     if (n4.getText().toString().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n4.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n4.setBackgroundColor(0xffff0000);
                     }
 
                     if (n5.getText().toString().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n5.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n5.setBackgroundColor(0xffff0000);
                     }
 
                     if (n6.getText().toString().equals(drawn)){
-                        numbers.setText(numbers.getText()+","+n6.getText());
+                        counttrue++;
+                        numbers.setText(counttrue+" out of 6");
                         n6.setBackgroundColor(0xffff0000);
                     }
 
