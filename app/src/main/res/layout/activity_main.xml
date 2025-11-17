@@ -5,29 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:hint="Name"
+            android:textSize="10dp"/>
+
+        <Button
+            android:id="@+id/sendName"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="73dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#80C739"
+            android:text="->"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/num1"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="0"
             android:textSize="20dp" />
 
-
         <TextView
             android:id="@+id/num2"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -36,7 +55,7 @@
 
         <TextView
             android:id="@+id/num3"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -45,7 +64,7 @@
 
         <TextView
             android:id="@+id/num4"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -54,7 +73,7 @@
 
         <TextView
             android:id="@+id/num5"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -63,7 +82,7 @@
 
         <TextView
             android:id="@+id/num6"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -73,7 +92,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -114,8 +133,6 @@
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="Score" />
-
-
     </LinearLayout>
 
 </LinearLayout>
