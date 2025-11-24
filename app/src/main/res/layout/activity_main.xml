@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/name"
+        <TextView
+            android:id="@+id/logindits"
             android:layout_width="340dp"
             android:layout_height="50dp"
             android:hint="Name"
-            android:textSize="10dp"/>
+            android:textSize="10dp" />
 
         <Button
             android:id="@+id/sendName"
